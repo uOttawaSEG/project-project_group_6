@@ -28,7 +28,7 @@ public class UserRepository {
 
         switch (role) {
             case "Administrator":
-                return (e.equals("admin@otams.ca") && p.equals("admin123")) ? "Administrator" : null;
+                return (e.toLowerCase().equals("admin@otams.ca") && p.equals("admin123")) ? "Administrator" : null;
             case "Student":
                 return db.studentDao().login(e, p) != null ? "Student" : null;
             case "Tutor":
