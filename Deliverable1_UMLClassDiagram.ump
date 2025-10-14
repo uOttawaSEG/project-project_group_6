@@ -1,48 +1,283 @@
-// OTAMS Deliverable 1 UML Class Diagram
-// Created using Umple Online
+//%% NEW FILE Tutor BEGINS HERE %%
 
-class User {
-  firstName;
-  lastName;
-  email;
-  password;
-  phoneNumber;
-}
-
-class Student {
-  isA User;
-  programOfStudy;
-}
-
-class Tutor {
-  isA User;
-  highestDegree;
-}
-
-class Administrator {
-  isA User;  // pre registered account exists
-}
-//$?[End_of_model]$?
-
-namespace -;
+/*PLEASE DO NOT EDIT THIS CODE*/
+/*This code was generated using the UMPLE 1.35.0.7523.c616a4dce modeling language!*/
 
 
-class User
+
+// line 18 "model.ump"
+// line 41 "model.ump"
+public class Tutor extends User
 {
-  position 296 18 140.688 126.359;
+
+  //------------------------
+  // MEMBER VARIABLES
+  //------------------------
+
+  //Tutor Attributes
+  private String highestDegree;
+
+  //------------------------
+  // CONSTRUCTOR
+  //------------------------
+
+  public Tutor(String aFirstName, String aLastName, String aEmail, String aPassword, String aPhoneNumber, String aHighestDegree)
+  {
+    super(aFirstName, aLastName, aEmail, aPassword, aPhoneNumber);
+    highestDegree = aHighestDegree;
+  }
+
+  //------------------------
+  // INTERFACE
+  //------------------------
+
+  public boolean setHighestDegree(String aHighestDegree)
+  {
+    boolean wasSet = false;
+    highestDegree = aHighestDegree;
+    wasSet = true;
+    return wasSet;
+  }
+
+  public String getHighestDegree()
+  {
+    return highestDegree;
+  }
+
+  public void delete()
+  {
+    super.delete();
+  }
+
+
+  public String toString()
+  {
+    return super.toString() + "["+
+            "highestDegree" + ":" + getHighestDegree()+ "]";
+  }
 }
 
-class Student
+
+
+//%% NEW FILE User BEGINS HERE %%
+
+/*PLEASE DO NOT EDIT THIS CODE*/
+/*This code was generated using the UMPLE 1.35.0.7523.c616a4dce modeling language!*/
+
+
+
+/**
+ * OTAMS Deliverable 1 UML Class Diagram
+ * Created using Umple Online
+ */
+// line 5 "model.ump"
+// line 31 "model.ump"
+public class User
 {
-  position 484 197 186.562 58.3594;
+
+  //------------------------
+  // MEMBER VARIABLES
+  //------------------------
+
+  //User Attributes
+  private String firstName;
+  private String lastName;
+  private String email;
+  private String password;
+  private String phoneNumber;
+
+  //------------------------
+  // CONSTRUCTOR
+  //------------------------
+
+  public User(String aFirstName, String aLastName, String aEmail, String aPassword, String aPhoneNumber)
+  {
+    firstName = aFirstName;
+    lastName = aLastName;
+    email = aEmail;
+    password = aPassword;
+    phoneNumber = aPhoneNumber;
+  }
+
+  //------------------------
+  // INTERFACE
+  //------------------------
+
+  public boolean setFirstName(String aFirstName)
+  {
+    boolean wasSet = false;
+    firstName = aFirstName;
+    wasSet = true;
+    return wasSet;
+  }
+
+  public boolean setLastName(String aLastName)
+  {
+    boolean wasSet = false;
+    lastName = aLastName;
+    wasSet = true;
+    return wasSet;
+  }
+
+  public boolean setEmail(String aEmail)
+  {
+    boolean wasSet = false;
+    email = aEmail;
+    wasSet = true;
+    return wasSet;
+  }
+
+  public boolean setPassword(String aPassword)
+  {
+    boolean wasSet = false;
+    password = aPassword;
+    wasSet = true;
+    return wasSet;
+  }
+
+  public boolean setPhoneNumber(String aPhoneNumber)
+  {
+    boolean wasSet = false;
+    phoneNumber = aPhoneNumber;
+    wasSet = true;
+    return wasSet;
+  }
+
+  public String getFirstName()
+  {
+    return firstName;
+  }
+
+  public String getLastName()
+  {
+    return lastName;
+  }
+
+  public String getEmail()
+  {
+    return email;
+  }
+
+  public String getPassword()
+  {
+    return password;
+  }
+
+  public String getPhoneNumber()
+  {
+    return phoneNumber;
+  }
+
+  public void delete()
+  {}
+
+
+  public String toString()
+  {
+    return super.toString() + "["+
+            "firstName" + ":" + getFirstName()+ "," +
+            "lastName" + ":" + getLastName()+ "," +
+            "email" + ":" + getEmail()+ "," +
+            "password" + ":" + getPassword()+ "," +
+            "phoneNumber" + ":" + getPhoneNumber()+ "]";
+  }
 }
 
-class Tutor
+
+
+//%% NEW FILE Administrator BEGINS HERE %%
+
+/*PLEASE DO NOT EDIT THIS CODE*/
+/*This code was generated using the UMPLE 1.35.0.7523.c616a4dce modeling language!*/
+
+
+
+// line 23 "model.ump"
+// line 46 "model.ump"
+public class Administrator extends User
 {
-  position 280 197 172.625 58.3594;
+
+  //------------------------
+  // MEMBER VARIABLES
+  //------------------------
+
+  //------------------------
+  // CONSTRUCTOR
+  //------------------------
+
+  public Administrator(String aFirstName, String aLastName, String aEmail, String aPassword, String aPhoneNumber)
+  {
+    super(aFirstName, aLastName, aEmail, aPassword, aPhoneNumber);
+  }
+
+  //------------------------
+  // INTERFACE
+  //------------------------
+
+  public void delete()
+  {
+    super.delete();
+  }
+
 }
 
-class Administrator
+
+
+//%% NEW FILE Student BEGINS HERE %%
+
+/*PLEASE DO NOT EDIT THIS CODE*/
+/*This code was generated using the UMPLE 1.35.0.7523.c616a4dce modeling language!*/
+
+
+
+// line 13 "model.ump"
+// line 36 "model.ump"
+public class Student extends User
 {
-  position 131 197 114.516 41.3594;
+
+  //------------------------
+  // MEMBER VARIABLES
+  //------------------------
+
+  //Student Attributes
+  private String programOfStudy;
+
+  //------------------------
+  // CONSTRUCTOR
+  //------------------------
+
+  public Student(String aFirstName, String aLastName, String aEmail, String aPassword, String aPhoneNumber, String aProgramOfStudy)
+  {
+    super(aFirstName, aLastName, aEmail, aPassword, aPhoneNumber);
+    programOfStudy = aProgramOfStudy;
+  }
+
+  //------------------------
+  // INTERFACE
+  //------------------------
+
+  public boolean setProgramOfStudy(String aProgramOfStudy)
+  {
+    boolean wasSet = false;
+    programOfStudy = aProgramOfStudy;
+    wasSet = true;
+    return wasSet;
+  }
+
+  public String getProgramOfStudy()
+  {
+    return programOfStudy;
+  }
+
+  public void delete()
+  {
+    super.delete();
+  }
+
+
+  public String toString()
+  {
+    return super.toString() + "["+
+            "programOfStudy" + ":" + getProgramOfStudy()+ "]";
+  }
 }
