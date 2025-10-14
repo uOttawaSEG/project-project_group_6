@@ -4,7 +4,7 @@ Course Code: SEG2105
 This project is the foundation for a platform that will connect students and tutors. 
 
 This project was made so that users can :
-View tutor availability and book appointments(as a student)
+View tutor availability and book appointments (as a student)
 Manage schedules and sessions (as a tutor)
 Oversee users and activity (as an administrator)
 
