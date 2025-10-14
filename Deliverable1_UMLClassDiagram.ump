@@ -1,0 +1,48 @@
+// OTAMS Deliverable 1 UML Class Diagram
+// Created using Umple Online
+
+class User {
+  firstName;
+  lastName;
+  email;
+  password;
+  phoneNumber;
+}
+
+class Student {
+  isA User;
+  programOfStudy;
+}
+
+class Tutor {
+  isA User;
+  highestDegree;
+}
+
+class Administrator {
+  isA User;  // pre registered account exists
+}
+//$?[End_of_model]$?
+
+namespace -;
+
+
+class User
+{
+  position 296 18 140.688 126.359;
+}
+
+class Student
+{
+  position 484 197 186.562 58.3594;
+}
+
+class Tutor
+{
+  position 280 197 172.625 58.3594;
+}
+
+class Administrator
+{
+  position 131 197 114.516 41.3594;
+}
