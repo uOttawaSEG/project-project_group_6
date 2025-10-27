@@ -9,16 +9,39 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OTAMS">
 
-        <activity android:name=".WelcomeActivity" android:exported="false" />
-        <activity android:name=".RegisterTutorActivity" android:exported="false" />
-        <activity android:name=".RegisterStudentActivity" android:exported="false" />
+        <!-- new for deliverable 2 -->
+        <activity
+            android:name=".AdminInboxActivity"
+            android:exported="false" />
 
-        <activity android:name=".MainActivity" android:exported="true">
+        <activity
+            android:name=".AdminRejectedActivity"
+            android:exported="false" />
+
+        <!-- existing screens -->
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".RegisterTutorActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".RegisterStudentActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
     </application>
 
 </manifest>
+

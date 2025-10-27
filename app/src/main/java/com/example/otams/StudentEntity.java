@@ -7,12 +7,15 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "students", indices = {@Index(value = {"email"}, unique = true)})
 public class StudentEntity {
     @PrimaryKey(autoGenerate = true)
-    public long id;
+    public int id;
     public String firstName, lastName, email, password, phone, program;
 
-    public StudentEntity(String firstName, String lastName, String email, String password, String phone, String program) {
+    //registration status for D2
+    public String status; // "PENDING' / "APPROVED" / "REJECTED"
+    public StudentEntity(String firstName, String lastName, String email, String password, String phone, String program, String status) {
         this.firstName = firstName; this.lastName = lastName; this.email = email;
-        this.password = password; this.phone = phone; this.program = program;
+        this.password = password; this.phone = phone; this.program = program; this.status = status;
+
     }
 }
 

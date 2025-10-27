@@ -1,8 +1,8 @@
 package com.example.otams;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -12,54 +12,69 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText emailInput, passwordInput;
     private Spinner roleSpinner;
-    private Button loginBtn, registerBtn;
+    private EditText emailInput;
+    private EditText passwordInput;
+    private Button loginBtn;
+    private Button registerBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize DB-backed repository once
         UserRepository.init(getApplicationContext());
 
-        emailInput = findViewById(R.id.emailInput);
+        roleSpinner   = findViewById(R.id.roleSpinner);
+        emailInput    = findViewById(R.id.emailInput);
         passwordInput = findViewById(R.id.passwordInput);
-        roleSpinner = findViewById(R.id.roleSpinner);
-        loginBtn = findViewById(R.id.loginBtn);
-        registerBtn = findViewById(R.id.registerBtn);
+        loginBtn      = findViewById(R.id.loginBtn);
+        registerBtn   = findViewById(R.id.registerBtn);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this, R.array.roles_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        roleSpinner.setAdapter(adapter);
+        loginBtn.setOnClickListener(v -> handleLogin());
+        registerBtn.setOnClickListener(v -> handleRegister());
+    }
 
-        loginBtn.setOnClickListener(v -> {
-            String role = roleSpinner.getSelectedItem().toString();
-            String email = emailInput.getText().toString().trim();
-            String pass = passwordInput.getText().toString().trim();
+    private void handleLogin() {
+        String role  = roleSpinner.getSelectedItem().toString();
+        String email = emailInput.getText().toString();
+        String pw    = passwordInput.getText().toString();
 
-            if (email.isEmpty() || pass.isEmpty()) {
-                Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
-                return;
-            }
+        UserRepository.AuthResult res = UserRepository.authenticate2(role, email, pw);
 
-            String okRole = UserRepository.authenticate(role, email, pass);
-            if (okRole != null) goToWelcome(okRole);
-            else Toast.makeText(this, "Invalid credentials for selected role", Toast.LENGTH_SHORT).show();
-        });
+        if (!res.ok) {
+            Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        registerBtn.setOnClickListener(v -> {
-            String role = roleSpinner.getSelectedItem().toString();
-            if ("Student".equals(role)) {
-                startActivity(new Intent(this, RegisterStudentActivity.class));
-            } else if ("Tutor".equals(role)) {
-                startActivity(new Intent(this, RegisterTutorActivity.class));
-            } else {
-                Toast.makeText(this, "You cannot register as an administrator, please choose Student or Tutor to register.", Toast.LENGTH_LONG).show();
-            }
-        });
+        if ("Administrator".equals(res.role)) {
+            goToWelcome("Administrator");
+            return;
+        }
+
+        if ("APPROVED".equals(res.status)) {
+            goToWelcome(res.role);
+        } else if ("PENDING".equals(res.status)) {
+            showInfoDialog("Your account is still pending approval by the administrator.");
+        } else if ("REJECTED".equals(res.status)) {
+            showInfoDialog("Your registration was rejected. Please contact admin at admin@otams.ca.");
+        } else {
+            showInfoDialog("Unknown status: " + res.status);
+        }
+    }
+
+    private void handleRegister() {
+        String role = roleSpinner.getSelectedItem().toString();
+
+        if ("Student".equalsIgnoreCase(role)) {
+            startActivity(new Intent(this, RegisterStudentActivity.class));
+        } else if ("Tutor".equalsIgnoreCase(role)) {
+            startActivity(new Intent(this, RegisterTutorActivity.class));
+        } else if ("Administrator".equalsIgnoreCase(role)) {
+            Toast.makeText(this, "Administrators are predefined. Please log in.", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Please choose Student or Tutor.", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void goToWelcome(String role) {
@@ -67,4 +82,13 @@ public class MainActivity extends AppCompatActivity {
         i.putExtra("role", role);
         startActivity(i);
     }
+
+    private void showInfoDialog(String msg) {
+        new AlertDialog.Builder(this)
+                .setTitle("Login Status")
+                .setMessage(msg)
+                .setPositiveButton("OK", null)
+                .show();
+    }
 }
+
