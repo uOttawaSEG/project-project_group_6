@@ -33,13 +33,7 @@ public class UserRepository {
     }
 
     // Insert new Tutor with status = PENDING
-    public static void addTutor(String fn,
-                                String ln,
-                                String email,
-                                String pw,
-                                String phone,
-                                String degree,
-                                String courses) throws Exception {
+    public static void addTutor(String fn, String ln, String email, String pw, String phone, String degree, String courses) throws Exception {
 
         String e = (email == null) ? "" : email.toLowerCase().trim();
 

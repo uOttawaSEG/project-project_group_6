@@ -16,6 +16,7 @@ public class AdminInboxActivity extends AppCompatActivity {
 
     private LinearLayout pendingStudentsContainer;
     private LinearLayout pendingTutorsContainer;
+    private Button backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,10 @@ public class AdminInboxActivity extends AppCompatActivity {
 
         pendingStudentsContainer = findViewById(R.id.pendingStudentsContainer);
         pendingTutorsContainer   = findViewById(R.id.pendingTutorsContainer);
+        Button backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(v -> {
+            finish();
+        });
 
         refreshLists();
     }

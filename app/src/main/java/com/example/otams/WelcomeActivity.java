@@ -20,7 +20,13 @@ public class WelcomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
 
         UserRepository.init(getApplicationContext());
-
+        Button logout = findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish(); // Close current activity
+            }
+        });
         roleText = findViewById(R.id.roleText);
         pendingRequestsBtn = findViewById(R.id.pendingRequestsBtn);
         rejectedRequestsBtn = findViewById(R.id.rejectedRequestsBtn);
@@ -42,6 +48,7 @@ public class WelcomeActivity extends AppCompatActivity {
         } else {
             pendingRequestsBtn.setVisibility(View.GONE);
             rejectedRequestsBtn.setVisibility(View.GONE);
+
         }
     }
 }

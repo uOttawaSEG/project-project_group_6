@@ -13,8 +13,13 @@ public class StudentEntity {
     //registration status for D2
     public String status; // "PENDING' / "APPROVED" / "REJECTED"
     public StudentEntity(String firstName, String lastName, String email, String password, String phone, String program, String status) {
-        this.firstName = firstName; this.lastName = lastName; this.email = email;
-        this.password = password; this.phone = phone; this.program = program; this.status = status;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.program = program;
+        this.status = status;
 
     }
 }

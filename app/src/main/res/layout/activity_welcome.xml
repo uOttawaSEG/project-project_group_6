@@ -27,6 +27,12 @@
         android:layout_height="wrap_content"
         android:text="Rejected Requests"
         android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout" />
 </LinearLayout>
 
 

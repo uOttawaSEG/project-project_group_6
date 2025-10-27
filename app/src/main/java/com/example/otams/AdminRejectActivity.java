@@ -26,7 +26,13 @@ public class AdminRejectActivity extends AppCompatActivity {
 
         rejectedStudentsContainer = findViewById(R.id.rejectedStudentsContainer);
         rejectedTutorsContainer   = findViewById(R.id.rejectedTutorsContainer);
-
+        Button backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish(); // Close current activity
+            }
+        });
         refreshLists();
     }
 
