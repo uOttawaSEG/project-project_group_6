@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         } else if ("PENDING".equals(res.status)) {
             showInfoDialog("Your account is still pending approval by the administrator.");
         } else if ("REJECTED".equals(res.status)) {
-            showInfoDialog("Your registration was rejected. Please contact admin at admin@otams.ca.");
+            showInfoDialog("Your registration was rejected. Please call the OTAMS admin at 613-555-0123.");
         } else {
             showInfoDialog("Unknown status: " + res.status);
         }
