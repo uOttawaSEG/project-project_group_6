@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="roles_array">
+        <item>Student</item>
+        <item>Tutor</item>
+        <item>Administrator</item>
+    </string-array>
+    <color name="card_bg">#FFFFFF</color>
+    <color name="gray_bg">#F6F6F6</color>
+    <color name="primary">#6A4CAF</color>
+    <color name="teal_200">#03DAC5</color>
+    <string name="app_name">OTAMS</string>
+    <string name="btn_back">Back</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_logout">Log Out</string>
+    <string name="btn_register">Register</string>
+    <string name="btn_submit">Register</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="login_title">OTAMS Login</string>
+    <string name="register_student_title">Student Registration</string>
+    <string name="register_tutor_title">Tutor Registration</string>
+    <string name="welcome_message">Welcome! You are logged in as %1$s</string>
+    <style name="Base.Theme.OTAMS" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.OTAMS" parent="Base.Theme.OTAMS"/>
+</resources>
