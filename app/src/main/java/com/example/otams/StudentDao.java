@@ -14,6 +14,8 @@ public interface StudentDao {
     @Query("SELECT * FROM students WHERE email = LOWER(:email) AND password = :password LIMIT 1")
     StudentEntity login(String email, String password);
 
+    @Query("SELECT * FROM students WHERE email = :email LIMIT 1")
+    StudentEntity findByEmail(String email);
     //for Deliverable 2
     @Query("SELECT * FROM students WHERE status = 'PENDING'")
     List<StudentEntity> getPending();

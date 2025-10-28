@@ -42,13 +42,20 @@ public class RegisterStudentActivity extends AppCompatActivity {
                 return;
             }
 
+            // CHECK IF EMAIL ALREADY EXISTS
+            if (UserRepository.emailExists(em)) {
+                Toast.makeText(this, "This email is already registered", Toast.LENGTH_SHORT).show();
+                email.setError("Email already in use");
+                return;
+            }
+
             try {
                 UserRepository.addStudent(fn, ln, em, pw, ph, pr);
                 Toast.makeText(this, "Registration successful", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, MainActivity.class));
                 finish();
             } catch (Exception ex) {
-                Toast.makeText(this, "Email already registered", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Registration failed: " + ex.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -58,6 +65,3 @@ public class RegisterStudentActivity extends AppCompatActivity {
         });
     }
 }
-
-
-

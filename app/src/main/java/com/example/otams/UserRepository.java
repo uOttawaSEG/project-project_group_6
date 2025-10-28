@@ -15,6 +15,19 @@ public class UserRepository {
         }
     }
 
+    // CHECK IF EMAIL EXISTS IN EITHER STUDENT OR TUTOR TABLE
+    public static boolean emailExists(String email) {
+        String e = (email == null) ? "" : email.toLowerCase().trim();
+
+        // Check if email exists in Student table
+        StudentEntity student = db.studentDao().findByEmail(e);
+        if (student != null) return true;
+
+        // Check if email exists in Tutor table
+        TutorEntity tutor = db.tutorDao().findByEmail(e);
+        return tutor != null;
+    }
+
     // Insert new Student with status = PENDING
     public static void addStudent(String fn,
                                   String ln,

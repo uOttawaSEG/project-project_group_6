@@ -14,6 +14,8 @@ public interface TutorDao {
     @Query("SELECT * FROM tutors WHERE email = LOWER(:email) AND password = :password LIMIT 1")
     TutorEntity login(String email, String password);
 
+    @Query("SELECT * FROM tutors WHERE email = :email LIMIT 1")
+    TutorEntity findByEmail(String email);
     //for Deliverable 2
     @Query("SELECT * FROM tutors WHERE status = 'PENDING'")
     List<TutorEntity> getPending();
