@@ -8,6 +8,11 @@
         android:minSdkVersion="24"
         android:targetSdkVersion="34" />
 
+    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+    <!-- <uses-sdk android:minSdkVersion="21"/> -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <permission
         android:name="com.example.otams.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
@@ -25,16 +30,12 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.OTAMS" >
-
-        <!-- new for deliverable 2 -->
         <activity
             android:name="com.example.otams.AdminInboxActivity"
             android:exported="false" />
         <activity
             android:name="com.example.otams.AdminRejectActivity"
             android:exported="false" />
-
-        <!-- existing screens -->
         <activity
             android:name="com.example.otams.WelcomeActivity"
             android:exported="false" />
@@ -43,6 +44,18 @@
             android:exported="false" />
         <activity
             android:name="com.example.otams.RegisterStudentActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.otams.TutorDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.otams.ManageAvailabilityActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.otams.PendingRequestsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.otams.ViewSessionsActivity"
             android:exported="false" />
         <activity
             android:name="com.example.otams.MainActivity"
@@ -58,7 +71,32 @@
             android:name="androidx.room.MultiInstanceInvalidationService"
             android:directBootAware="true"
             android:exported="false" />
+        <service
+            android:name="com.google.firebase.components.ComponentDiscoveryService"
+            android:directBootAware="true"
+            android:exported="false" >
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.database.FirebaseDatabaseKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+        </service>
 
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:authorities="com.example.otams.firebaseinitprovider"
+            android:directBootAware="true"
+            android:exported="false"
+            android:initOrder="100" />
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.example.otams.androidx-startup"
@@ -73,6 +111,10 @@
                 android:name="androidx.profileinstaller.ProfileInstallerInitializer"
                 android:value="androidx.startup" />
         </provider>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
         <receiver
             android:name="androidx.profileinstaller.ProfileInstallReceiver"

@@ -1,5 +1,6 @@
 plugins {
     id("com.android.application")
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -37,5 +38,6 @@ dependencies {
 
     // Room (SQLite) - Java project uses annotationProcessor
     implementation("androidx.room:room-runtime:2.6.1")
+    implementation(libs.firebase.database)
     annotationProcessor("androidx.room:room-compiler:2.6.1")
 }

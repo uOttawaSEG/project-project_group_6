@@ -53,7 +53,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if ("APPROVED".equals(res.status)) {
-            goToWelcome(res.role);
+            if ("Tutor".equals(res.role)) {
+                TutorEntity tutor = UserRepository.getTutorByEmail(email);
+                if (tutor != null) {
+                    Intent intent = new Intent(MainActivity.this, TutorDashboardActivity.class);
+                    intent.putExtra("TUTOR_ID", tutor.id);
+                    intent.putExtra("TUTOR_NAME", tutor.firstName + " " + tutor.lastName);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    Toast.makeText(this, "Error: Tutor not found", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                goToWelcome(res.role);
+            }
         } else if ("PENDING".equals(res.status)) {
             showInfoDialog("Your account is still pending approval by the administrator.");
         } else if ("REJECTED".equals(res.status)) {
@@ -91,4 +104,3 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 }
-

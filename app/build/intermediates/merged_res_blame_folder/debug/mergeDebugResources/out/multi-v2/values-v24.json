@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.otams.app-mergeDebugResources-32:/values-v24/values-v24.xml",
+            "outputFile": "com.example.otams.app-mergeDebugResources-40:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/estifanoswm/.gradle/caches/8.13/transforms/1019c923486abac2345e2c5058e07433/transformed/material-1.12.0/res/values-v24/values-v24.xml",
+                    "source": "/Users/estifanoswm/.gradle/caches/8.13/transforms/7bf9866444db84a671cbca49862912c3/transformed/material-1.12.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/estifanoswm/.gradle/caches/8.13/transforms/cbb98450a1df5df08635d75df1caebcb/transformed/appcompat-1.7.0/res/values-v24/values-v24.xml",
+                    "source": "/Users/estifanoswm/.gradle/caches/8.13/transforms/14d28870e30fb74e26dc733eea867404/transformed/appcompat-1.7.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

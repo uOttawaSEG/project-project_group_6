@@ -9,7 +9,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OTAMS">
 
-        <!-- new for deliverable 2 -->
         <activity
             android:name=".AdminInboxActivity"
             android:exported="false" />
@@ -18,7 +17,6 @@
             android:name=".AdminRejectActivity"
             android:exported="false" />
 
-        <!-- existing screens -->
         <activity
             android:name=".WelcomeActivity"
             android:exported="false" />
@@ -32,6 +30,22 @@
             android:exported="false" />
 
         <activity
+            android:name=".TutorDashboardActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ManageAvailabilityActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".PendingRequestsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ViewSessionsActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -40,8 +54,6 @@
             </intent-filter>
         </activity>
 
-
     </application>
 
 </manifest>
-

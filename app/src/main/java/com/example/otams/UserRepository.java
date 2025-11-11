@@ -8,14 +8,14 @@ public class UserRepository {
 
     private static AppDatabase db;
 
-    // Call this once in each Activity before using the repo
+
     public static void init(Context ctx) {
         if (db == null) {
             db = AppDatabase.getInstance(ctx);
         }
     }
 
-    // CHECK IF EMAIL EXISTS IN EITHER STUDENT OR TUTOR TABLE
+
     public static boolean emailExists(String email) {
         String e = (email == null) ? "" : email.toLowerCase().trim();
 
@@ -100,6 +100,11 @@ public class UserRepository {
             default:
                 return new AuthResult(false, null, null);
         }
+    }
+
+    // Get tutor by email
+    public static TutorEntity getTutorByEmail(String email) {
+        return db.tutorDao().findByEmail(email);
     }
 
     // Admin data access

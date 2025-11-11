@@ -6,12 +6,21 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {StudentEntity.class, TutorEntity.class}, version = 4, exportSchema = false)
+@Database(entities = {
+        StudentEntity.class,
+        TutorEntity.class,
+        AvailabilitySlotEntity.class,
+        SessionEntity.class
+},
+        version = 9,  // Increment version for schema changes
+        exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static volatile AppDatabase INSTANCE;
 
     public abstract StudentDao studentDao();
     public abstract TutorDao tutorDao();
+    public abstract AvailabilitySlotDao availabilitySlotDao();
+    public abstract SessionDao sessionDao();
 
     public static AppDatabase getInstance(Context ctx) {
         if (INSTANCE == null) {
@@ -19,8 +28,8 @@ public abstract class AppDatabase extends RoomDatabase {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(ctx.getApplicationContext(),
                                     AppDatabase.class, "otams.db")
-                            .fallbackToDestructiveMigration()
-                            .allowMainThreadQueries() // OK for coursework/demo
+                            .fallbackToDestructiveMigration()  // Recreate DB on schema change
+                            .allowMainThreadQueries()
                             .build();
                 }
             }
@@ -28,4 +37,3 @@ public abstract class AppDatabase extends RoomDatabase {
         return INSTANCE;
     }
 }
-

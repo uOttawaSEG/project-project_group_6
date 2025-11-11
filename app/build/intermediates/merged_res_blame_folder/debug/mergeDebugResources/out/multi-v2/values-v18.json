@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.otams.app-mergeDebugResources-32:/values-v18/values-v18.xml",
+            "outputFile": "com.example.otams.app-mergeDebugResources-40:/values-v18/values-v18.xml",
             "map": [
                 {
-                    "source": "/Users/estifanoswm/.gradle/caches/8.13/transforms/cbb98450a1df5df08635d75df1caebcb/transformed/appcompat-1.7.0/res/values-v18/values-v18.xml",
+                    "source": "/Users/estifanoswm/.gradle/caches/8.13/transforms/14d28870e30fb74e26dc733eea867404/transformed/appcompat-1.7.0/res/values-v18/values-v18.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
