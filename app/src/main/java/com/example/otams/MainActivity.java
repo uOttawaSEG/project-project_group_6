@@ -47,6 +47,26 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+        if ("Student".equals(res.role)) {
+            if ("APPROVED".equals(res.status)) {
+                StudentEntity student = UserRepository.getStudentByEmail(email);
+                if (student != null) {
+                    Intent intent = new Intent(this, StudentDashboardActivity.class);
+                    intent.putExtra("STUDENT_ID", student.id);
+                    intent.putExtra("STUDENT_NAME", student.firstName + " " + student.lastName);
+                    startActivity(intent);
+                    finish();
+                    return;
+                } else {
+                    Toast.makeText(this, "Error: Student not found", Toast.LENGTH_SHORT).show();
+                }
+            } else if ("PENDING".equals(res.status)) {
+                showInfoDialog("Your account is still pending approval by the administrator.");
+            } else if ("REJECTED".equals(res.status)) {
+                showInfoDialog("Your registration was rejected. Please call the OTAMS admin at 613-555-0123.");
+            }
+            return;
+        }
 
         if ("Tutor".equals(res.role)) {
             if ("APPROVED".equals(res.status)) {
@@ -73,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             goToWelcome("Administrator");
             return;
         }
-        
+
     }
 
 

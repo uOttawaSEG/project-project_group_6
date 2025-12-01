@@ -37,9 +37,6 @@
             android:name="com.example.otams.ViewSessionsActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.otams.ViewSessionsActivity"
-            android:exported="false" />
-        <activity
             android:name="com.example.otams.ManageAvailabilityActivity"
             android:exported="false" />
         <activity
@@ -59,6 +56,15 @@
             android:exported="false" />
         <activity
             android:name="com.example.otams.TutorDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.otams.StudentDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.otams.SearchTutorActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.otams.StudentSessionsActivity"
             android:exported="false" />
         <activity
             android:name="com.example.otams.MainActivity"

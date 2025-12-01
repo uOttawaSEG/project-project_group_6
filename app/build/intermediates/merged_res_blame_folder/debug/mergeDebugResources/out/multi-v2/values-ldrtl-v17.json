@@ -4,7 +4,7 @@
             "outputFile": "com.example.otams.app-mergeDebugResources-41:/values-ldrtl-v17/values-ldrtl-v17.xml",
             "map": [
                 {
-                    "source": "/Users/feyadediran/.gradle/caches/8.13/transforms/7bf9866444db84a671cbca49862912c3/transformed/material-1.12.0/res/values-ldrtl-v17/values-ldrtl-v17.xml",
+                    "source": "/Users/estifanoswm/.gradle/caches/8.13/transforms/7bf9866444db84a671cbca49862912c3/transformed/material-1.12.0/res/values-ldrtl-v17/values-ldrtl-v17.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

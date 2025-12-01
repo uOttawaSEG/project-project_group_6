@@ -25,6 +25,11 @@ public interface TutorDao {
 
     @Query("UPDATE tutors SET status = :newStatus WHERE id = :id")
     void updateStatus(long id, String newStatus);
+
+    @Query("SELECT * FROM tutors WHERE courses LIKE '%' || :courseCode || '%' AND status = 'APPROVED'")
+    List<TutorEntity> searchByCourse(String courseCode);
+    @Query("SELECT * FROM tutors WHERE id = :id")
+    TutorEntity getTutorById(int id);
 }
 
 

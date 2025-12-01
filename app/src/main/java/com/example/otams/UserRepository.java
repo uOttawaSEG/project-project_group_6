@@ -107,6 +107,9 @@ public class UserRepository {
         return db.tutorDao().findByEmail(email);
     }
 
+    public static StudentEntity getStudentByEmail(String email) {
+        return db.studentDao().findByEmail(email);
+    }
     // Admin data access
 
     public static List<StudentEntity> getPendingStudents() {
