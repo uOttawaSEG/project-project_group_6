@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".TutorDashboardActivity">
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome Tutor"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/btnManageAvailability"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Manage Availability"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/welcomeText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnUpcomingSessions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Upcoming Sessions"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/btnManageAvailability"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnPastSessions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Past Sessions"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/btnUpcomingSessions"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnPendingRequests"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Pending Requests"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/btnPastSessions"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:backgroundTint="#FF0000"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/btnPendingRequests"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
