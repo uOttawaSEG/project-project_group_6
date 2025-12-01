@@ -58,9 +58,6 @@ public class WelcomeActivity extends AppCompatActivity {
             case "Tutor":
                 intent = new Intent(this, TutorDashboardActivity.class);
                 break;
-//            case "Student":
-//              intent = new Intent(this, StudentDashboardActivity.class);
-//              break;
         }
     }
 
