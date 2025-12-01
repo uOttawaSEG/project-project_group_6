@@ -31,6 +31,18 @@
         android:testOnly="true"
         android:theme="@style/Theme.OTAMS" >
         <activity
+            android:name="com.example.otams.PendingRequestsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.otams.ViewSessionsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.otams.ViewSessionsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.otams.ManageAvailabilityActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.otams.AdminInboxActivity"
             android:exported="false" />
         <activity
@@ -47,15 +59,6 @@
             android:exported="false" />
         <activity
             android:name="com.example.otams.TutorDashboardActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.otams.ManageAvailabilityActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.otams.PendingRequestsActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.otams.ViewSessionsActivity"
             android:exported="false" />
         <activity
             android:name="com.example.otams.MainActivity"

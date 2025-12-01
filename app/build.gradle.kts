@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.otams"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.otams"
@@ -39,5 +39,6 @@ dependencies {
     // Room (SQLite) - Java project uses annotationProcessor
     implementation("androidx.room:room-runtime:2.6.1")
     implementation(libs.firebase.database)
+    implementation(libs.activity)
     annotationProcessor("androidx.room:room-compiler:2.6.1")
 }

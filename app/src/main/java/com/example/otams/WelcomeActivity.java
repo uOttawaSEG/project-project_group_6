@@ -51,4 +51,17 @@ public class WelcomeActivity extends AppCompatActivity {
 
         }
     }
+    private void goToDashboard(String role){
+        Intent intent;
+
+        switch (role) {
+            case "Tutor":
+                intent = new Intent(this, TutorDashboardActivity.class);
+                break;
+//            case "Student":
+//              intent = new Intent(this, StudentDashboardActivity.class);
+//              break;
+        }
+    }
+
 }

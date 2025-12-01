@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.otams.app-mergeDebugResources-40:/values-w600dp-land-v13/values-w600dp-land-v13.xml",
+            "outputFile": "com.example.otams.app-mergeDebugResources-41:/values-w600dp-land-v13/values-w600dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/Users/estifanoswm/.gradle/caches/8.13/transforms/7bf9866444db84a671cbca49862912c3/transformed/material-1.12.0/res/values-w600dp-land-v13/values-w600dp-land-v13.xml",
+                    "source": "/Users/feyadediran/.gradle/caches/8.13/transforms/7bf9866444db84a671cbca49862912c3/transformed/material-1.12.0/res/values-w600dp-land-v13/values-w600dp-land-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

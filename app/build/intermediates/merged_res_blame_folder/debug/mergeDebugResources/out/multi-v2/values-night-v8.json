@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.otams.app-mergeDebugResources-40:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.otams.app-mergeDebugResources-41:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/Users/estifanoswm/AndroidStudioProjects/project-project_group_6/app/src/main/res/values-night/themes.xml",
+                    "source": "/Users/feyadediran/Library/CloudStorage/OneDrive-UniversityofOttawa/project-project_group_6/app/src/main/res/values-night/themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/estifanoswm/.gradle/caches/8.13/transforms/14d28870e30fb74e26dc733eea867404/transformed/appcompat-1.7.0/res/values-night-v8/values-night-v8.xml",
+                    "source": "/Users/feyadediran/.gradle/caches/8.13/transforms/14d28870e30fb74e26dc733eea867404/transformed/appcompat-1.7.0/res/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -40,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "/Users/estifanoswm/.gradle/caches/8.13/transforms/7bf9866444db84a671cbca49862912c3/transformed/material-1.12.0/res/values-night-v8/values-night-v8.xml",
+                    "source": "/Users/feyadediran/.gradle/caches/8.13/transforms/7bf9866444db84a671cbca49862912c3/transformed/material-1.12.0/res/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

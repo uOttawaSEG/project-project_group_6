@@ -1,5 +1,6 @@
 package com.example.otams;
 
+import com.example.otams.R;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;

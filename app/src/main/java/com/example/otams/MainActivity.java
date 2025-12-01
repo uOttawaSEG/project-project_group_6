@@ -47,34 +47,35 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        if ("Administrator".equals(res.role)) {
-            goToWelcome("Administrator");
-            return;
-        }
 
-        if ("APPROVED".equals(res.status)) {
-            if ("Tutor".equals(res.role)) {
+        if ("Tutor".equals(res.role)) {
+            if ("APPROVED".equals(res.status)) {
                 TutorEntity tutor = UserRepository.getTutorByEmail(email);
                 if (tutor != null) {
-                    Intent intent = new Intent(MainActivity.this, TutorDashboardActivity.class);
+                    Intent intent = new Intent(this, TutorDashboardActivity.class);
                     intent.putExtra("TUTOR_ID", tutor.id);
                     intent.putExtra("TUTOR_NAME", tutor.firstName + " " + tutor.lastName);
                     startActivity(intent);
                     finish();
+                    return;
                 } else {
                     Toast.makeText(this, "Error: Tutor not found", Toast.LENGTH_SHORT).show();
                 }
-            } else {
-                goToWelcome(res.role);
+            } else if ("PENDING".equals(res.status)) {
+                showInfoDialog("Your account is still pending approval by the administrator.");
+            } else if ("REJECTED".equals(res.status)) {
+                showInfoDialog("Your registration was rejected. Please call the OTAMS admin at 613-555-0123.");
             }
-        } else if ("PENDING".equals(res.status)) {
-            showInfoDialog("Your account is still pending approval by the administrator.");
-        } else if ("REJECTED".equals(res.status)) {
-            showInfoDialog("Your registration was rejected. Please call the OTAMS admin at 613-555-0123.");
-        } else {
-            showInfoDialog("Unknown status: " + res.status);
+            return;
         }
+
+        if ("Administrator".equals(res.role)) {
+            goToWelcome("Administrator");
+            return;
+        }
+        
     }
+
 
     private void handleRegister() {
         String role = roleSpinner.getSelectedItem().toString();
@@ -95,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
         i.putExtra("role", role);
         startActivity(i);
     }
+
+
 
     private void showInfoDialog(String msg) {
         new AlertDialog.Builder(this)
