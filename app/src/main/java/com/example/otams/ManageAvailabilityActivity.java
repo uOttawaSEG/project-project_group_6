@@ -39,7 +39,7 @@ public class ManageAvailabilityActivity extends AppCompatActivity {
 
         initViews();
         setupPickers();
-        loadMySlots(); // Load existing slots when screen opens
+        loadMySlots();
     }
 
     private void initViews() {
@@ -67,13 +67,12 @@ public class ManageAvailabilityActivity extends AppCompatActivity {
             return;
         }
 
-        // Logic to insert slot
         AvailabilitySlotEntity newSlot = new AvailabilitySlotEntity(
                 tutorId, selectedDate, selectedStartTime, selectedEndTime, cbAutoApprove.isChecked()
         );
         db.availabilitySlotDao().insert(newSlot);
         Toast.makeText(this, "Slot Created!", Toast.LENGTH_SHORT).show();
-        loadMySlots(); // Refresh list to show new slot
+        loadMySlots();
     }
 
     private void loadMySlots() {
@@ -94,7 +93,6 @@ public class ManageAvailabilityActivity extends AppCompatActivity {
     }
 
     private void attemptDeleteSlot(AvailabilitySlotEntity slot) {
-        // DELIVERABLE 4 REQUIREMENT: Cannot delete if booked!
         boolean isBooked = checkSlotBooking(slot);
 
         if (isBooked) {
@@ -109,7 +107,6 @@ public class ManageAvailabilityActivity extends AppCompatActivity {
     private boolean checkSlotBooking(AvailabilitySlotEntity slot) {
         List<SessionEntity> sessions = db.sessionDao().getSessionsForTutor(tutorId);
         for (SessionEntity s : sessions) {
-            // Check if session matches slot date/time and is active (not rejected)
             if (s.date.equals(slot.date) && s.time.equals(slot.startTime) && !"REJECTED".equals(s.status)) {
                 return true;
             }

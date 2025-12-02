@@ -12,6 +12,7 @@ id approveBtn
 id autoApproveText
 id backBtn
 id backButton
+id bookBtn
 id btnBack
 id btnCreateSlot
 id btnHistory
@@ -29,6 +30,7 @@ id cbAutoApprove
 id courseText
 id courses
 id dateText
+id dateTimeText
 id degree
 id deleteBtn
 id email
@@ -51,6 +53,7 @@ id pendingTutorsHeader
 id phone
 id phoneText
 id program
+id ratingText
 id recyclerView
 id registerBtn
 id rejectBtn
@@ -70,6 +73,7 @@ id studentInfoText
 id timeText
 id title
 id titleText
+id tutorName
 id tvEmptyState
 id tvEndTime
 id tvSelectedDate
@@ -92,6 +96,7 @@ layout activity_welcome
 layout row_availability_slot
 layout row_pending_request
 layout row_rejected_request
+layout row_search_result
 layout row_session
 mipmap ic_launcher
 mipmap ic_launcher_round

@@ -76,16 +76,16 @@
         "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/layout/activity_view_sessions.xml"
     },
     {
-        "merged": "com.example.otams.app-debug-43:/layout_row_availability_slot.xml.flat",
-        "source": "com.example.otams.app-main-45:/layout/row_availability_slot.xml"
-    },
-    {
         "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/layout_row_availability_slot.xml.flat",
         "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/layout/row_availability_slot.xml"
     },
     {
         "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.otams.app-debug-43:/layout_row_search_result.xml.flat",
+        "source": "com.example.otams.app-main-45:/layout/row_search_result.xml"
     },
     {
         "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/layout_activity_student_sessions.xml.flat",

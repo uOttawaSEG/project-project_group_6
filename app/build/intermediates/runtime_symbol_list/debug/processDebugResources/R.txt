@@ -3251,6 +3251,7 @@ int id beginning 0x7f090061
 int id below 0x7f090062
 int id bestChoice 0x7f090063
 int id blocking 0x7f090064
+int id bookBtn 0x7f090243
 int id bottom 0x7f090065
 int id bounce 0x7f090066
 int id bounceBoth 0x7f090067
@@ -3313,6 +3314,7 @@ int id customPanel 0x7f090095
 int id cut 0x7f090096
 int id dark 0x7f090097
 int id dateText 0x7f090231
+int id dateTimeText 0x7f090244
 int id date_picker_actions 0x7f090098
 int id decelerate 0x7f090099
 int id decelerateAndComplete 0x7f09009a
@@ -3558,6 +3560,7 @@ int id program 0x7f090187
 int id progress_circular 0x7f090188
 int id progress_horizontal 0x7f090189
 int id radio 0x7f09018a
+int id ratingText 0x7f090245
 int id ratio 0x7f09018b
 int id rectangles 0x7f09018c
 int id recyclerView 0x7f09018d
@@ -3696,6 +3699,7 @@ int id transition_position 0x7f09020a
 int id transition_scene_layoutid_cache 0x7f09020b
 int id transition_transform 0x7f09020c
 int id triangle 0x7f09020d
+int id tutorName 0x7f090246
 int id tvEmptyState 0x7f09023c
 int id tvEndTime 0x7f09023d
 int id tvSelectedDate 0x7f09023e
@@ -3934,6 +3938,7 @@ int layout notification_template_part_time 0x7f0c006f
 int layout row_availability_slot 0x7f0c007c
 int layout row_pending_request 0x7f0c0070
 int layout row_rejected_request 0x7f0c0071
+int layout row_search_result 0x7f0c007d
 int layout row_session 0x7f0c0079
 int layout select_dialog_item_material 0x7f0c0072
 int layout select_dialog_multichoice_material 0x7f0c0073
