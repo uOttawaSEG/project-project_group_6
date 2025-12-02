@@ -3238,6 +3238,7 @@ id arc
 id asConfigured
 id async
 id auto
+id autoApproveText
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
@@ -3256,6 +3257,8 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnBack
+id btnCreateSlot
 id btnHistory
 id btnLogout
 id btnManageAvailability
@@ -3263,12 +3266,16 @@ id btnMySessions
 id btnPastSessions
 id btnPendingRequests
 id btnSearch
+id btnSelectDate
+id btnSelectEndTime
+id btnSelectStartTime
 id btnUpcomingSessions
 id buttonPanel
 id cache_measures
 id callMeasure
 id cancel_button
 id carryVelocity
+id cbAutoApprove
 id center
 id centerCrop
 id centerInside
@@ -3313,6 +3320,7 @@ id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
 id degree
+id deleteBtn
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -3572,6 +3580,7 @@ id roleSpinner
 id roleText
 id rounded
 id row_index_key
+id rvAvailabilitySlots
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3688,6 +3697,10 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvEmptyState
+id tvEndTime
+id tvSelectedDate
+id tvStartTime
 id unchecked
 id uniform
 id unlabeled
@@ -3833,6 +3846,7 @@ layout abc_tooltip
 layout activity_admin_inbox
 layout activity_admin_rejected
 layout activity_main
+layout activity_manage_availability
 layout activity_pending_users
 layout activity_register_student
 layout activity_register_tutor
@@ -3841,6 +3855,7 @@ layout activity_search_tutor
 layout activity_student_dashboard
 layout activity_student_sessions
 layout activity_tutor_dashboard
+layout activity_view_sessions
 layout activity_welcome
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -3917,6 +3932,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout row_availability_slot
 layout row_pending_request
 layout row_rejected_request
 layout row_session

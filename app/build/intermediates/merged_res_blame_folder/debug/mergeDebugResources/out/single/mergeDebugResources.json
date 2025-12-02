@@ -4,6 +4,10 @@
         "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/drawable/ic_launcher_foreground.xml"
     },
     {
+        "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/layout_activity_manage_availability.xml.flat",
+        "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/layout/activity_manage_availability.xml"
+    },
+    {
         "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/mipmap-anydpi-v26/ic_launcher.xml"
     },
@@ -44,16 +48,12 @@
         "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/layout/activity_admin_rejected.xml"
     },
     {
-        "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/drawable_seg2105_project.png.flat",
-        "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/drawable/seg2105_project.png"
-    },
-    {
         "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/layout_activity_search_tutor.xml.flat",
         "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/layout/activity_search_tutor.xml"
     },
     {
-        "merged": "com.example.otams.app-debug-43:/layout_row_session.xml.flat",
-        "source": "com.example.otams.app-main-45:/layout/row_session.xml"
+        "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/drawable_seg2105_project.png.flat",
+        "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/drawable/seg2105_project.png"
     },
     {
         "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/layout_row_rejected_request.xml.flat",
@@ -72,6 +72,18 @@
         "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
+        "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/layout_activity_view_sessions.xml.flat",
+        "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/layout/activity_view_sessions.xml"
+    },
+    {
+        "merged": "com.example.otams.app-debug-43:/layout_row_availability_slot.xml.flat",
+        "source": "com.example.otams.app-main-45:/layout/row_availability_slot.xml"
+    },
+    {
+        "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/layout_row_availability_slot.xml.flat",
+        "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/layout/row_availability_slot.xml"
+    },
+    {
         "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/mipmap-mdpi/ic_launcher_round.webp"
     },
@@ -88,12 +100,16 @@
         "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/xml/data_extraction_rules.xml"
     },
     {
+        "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/layout_activity_admin_inbox.xml.flat",
+        "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/layout/activity_admin_inbox.xml"
+    },
+    {
         "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/layout_activity_tutor_dashboard.xml.flat",
         "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/layout/activity_tutor_dashboard.xml"
     },
     {
-        "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/layout_activity_admin_inbox.xml.flat",
-        "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/layout/activity_admin_inbox.xml"
+        "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/layout_row_session.xml.flat",
+        "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/layout/row_session.xml"
     },
     {
         "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/drawable_ic_launcher_background.xml.flat",

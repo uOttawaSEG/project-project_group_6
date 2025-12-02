@@ -30,6 +30,9 @@ public interface TutorDao {
     List<TutorEntity> searchByCourse(String courseCode);
     @Query("SELECT * FROM tutors WHERE id = :id")
     TutorEntity getTutorById(int id);
+
+    @Query("SELECT * FROM tutors WHERE email = :email LIMIT 1")
+    TutorEntity getTutorByEmail(String email);
 }
 
 

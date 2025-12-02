@@ -624,6 +624,90 @@ public final class TutorDao_Impl implements TutorDao {
     }
   }
 
+  @Override
+  public TutorEntity getTutorByEmail(final String email) {
+    final String _sql = "SELECT * FROM tutors WHERE email = ? LIMIT 1";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (email == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, email);
+    }
+    __db.assertNotSuspendingTransaction();
+    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+    try {
+      final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+      final int _cursorIndexOfFirstName = CursorUtil.getColumnIndexOrThrow(_cursor, "firstName");
+      final int _cursorIndexOfLastName = CursorUtil.getColumnIndexOrThrow(_cursor, "lastName");
+      final int _cursorIndexOfEmail = CursorUtil.getColumnIndexOrThrow(_cursor, "email");
+      final int _cursorIndexOfPassword = CursorUtil.getColumnIndexOrThrow(_cursor, "password");
+      final int _cursorIndexOfPhone = CursorUtil.getColumnIndexOrThrow(_cursor, "phone");
+      final int _cursorIndexOfDegree = CursorUtil.getColumnIndexOrThrow(_cursor, "degree");
+      final int _cursorIndexOfCourses = CursorUtil.getColumnIndexOrThrow(_cursor, "courses");
+      final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
+      final TutorEntity _result;
+      if (_cursor.moveToFirst()) {
+        final String _tmpFirstName;
+        if (_cursor.isNull(_cursorIndexOfFirstName)) {
+          _tmpFirstName = null;
+        } else {
+          _tmpFirstName = _cursor.getString(_cursorIndexOfFirstName);
+        }
+        final String _tmpLastName;
+        if (_cursor.isNull(_cursorIndexOfLastName)) {
+          _tmpLastName = null;
+        } else {
+          _tmpLastName = _cursor.getString(_cursorIndexOfLastName);
+        }
+        final String _tmpEmail;
+        if (_cursor.isNull(_cursorIndexOfEmail)) {
+          _tmpEmail = null;
+        } else {
+          _tmpEmail = _cursor.getString(_cursorIndexOfEmail);
+        }
+        final String _tmpPassword;
+        if (_cursor.isNull(_cursorIndexOfPassword)) {
+          _tmpPassword = null;
+        } else {
+          _tmpPassword = _cursor.getString(_cursorIndexOfPassword);
+        }
+        final String _tmpPhone;
+        if (_cursor.isNull(_cursorIndexOfPhone)) {
+          _tmpPhone = null;
+        } else {
+          _tmpPhone = _cursor.getString(_cursorIndexOfPhone);
+        }
+        final String _tmpDegree;
+        if (_cursor.isNull(_cursorIndexOfDegree)) {
+          _tmpDegree = null;
+        } else {
+          _tmpDegree = _cursor.getString(_cursorIndexOfDegree);
+        }
+        final String _tmpCourses;
+        if (_cursor.isNull(_cursorIndexOfCourses)) {
+          _tmpCourses = null;
+        } else {
+          _tmpCourses = _cursor.getString(_cursorIndexOfCourses);
+        }
+        final String _tmpStatus;
+        if (_cursor.isNull(_cursorIndexOfStatus)) {
+          _tmpStatus = null;
+        } else {
+          _tmpStatus = _cursor.getString(_cursorIndexOfStatus);
+        }
+        _result = new TutorEntity(_tmpFirstName,_tmpLastName,_tmpEmail,_tmpPassword,_tmpPhone,_tmpDegree,_tmpCourses,_tmpStatus);
+        _result.id = _cursor.getInt(_cursorIndexOfId);
+      } else {
+        _result = null;
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
+
   @NonNull
   public static List<Class<?>> getRequiredConverters() {
     return Collections.emptyList();

@@ -3237,6 +3237,7 @@ int id arc 0x7f090054
 int id asConfigured 0x7f090055
 int id async 0x7f090056
 int id auto 0x7f090057
+int id autoApproveText 0x7f090242
 int id autoComplete 0x7f090058
 int id autoCompleteToEnd 0x7f090059
 int id autoCompleteToStart 0x7f09005a
@@ -3255,6 +3256,8 @@ int id bounce 0x7f090066
 int id bounceBoth 0x7f090067
 int id bounceEnd 0x7f090068
 int id bounceStart 0x7f090069
+int id btnBack 0x7f090235
+int id btnCreateSlot 0x7f090236
 int id btnHistory 0x7f090229
 int id btnLogout 0x7f09006a
 int id btnManageAvailability 0x7f09006b
@@ -3262,12 +3265,16 @@ int id btnMySessions 0x7f09022a
 int id btnPastSessions 0x7f09006c
 int id btnPendingRequests 0x7f09006d
 int id btnSearch 0x7f09022b
+int id btnSelectDate 0x7f090237
+int id btnSelectEndTime 0x7f090238
+int id btnSelectStartTime 0x7f090239
 int id btnUpcomingSessions 0x7f09006e
 int id buttonPanel 0x7f09006f
 int id cache_measures 0x7f090070
 int id callMeasure 0x7f090071
 int id cancel_button 0x7f090072
 int id carryVelocity 0x7f090073
+int id cbAutoApprove 0x7f09023a
 int id center 0x7f090074
 int id centerCrop 0x7f090075
 int id centerInside 0x7f090076
@@ -3312,6 +3319,7 @@ int id decelerateAndComplete 0x7f09009a
 int id decor_content_parent 0x7f09009b
 int id default_activity_button 0x7f09009c
 int id degree 0x7f09009d
+int id deleteBtn 0x7f090240
 int id deltaRelative 0x7f09009e
 int id dependency_ordering 0x7f09009f
 int id design_bottom_sheet 0x7f0900a0
@@ -3571,6 +3579,7 @@ int id roleSpinner 0x7f09019b
 int id roleText 0x7f09019c
 int id rounded 0x7f09019d
 int id row_index_key 0x7f09019e
+int id rvAvailabilitySlots 0x7f09023b
 int id save_non_transition_alpha 0x7f09019f
 int id save_overlay_view 0x7f0901a0
 int id sawtooth 0x7f0901a1
@@ -3687,6 +3696,10 @@ int id transition_position 0x7f09020a
 int id transition_scene_layoutid_cache 0x7f09020b
 int id transition_transform 0x7f09020c
 int id triangle 0x7f09020d
+int id tvEmptyState 0x7f09023c
+int id tvEndTime 0x7f09023d
+int id tvSelectedDate 0x7f09023e
+int id tvStartTime 0x7f09023f
 int id unchecked 0x7f09020e
 int id uniform 0x7f09020f
 int id unlabeled 0x7f090210
@@ -3832,6 +3845,7 @@ int layout abc_tooltip 0x7f0c001b
 int layout activity_admin_inbox 0x7f0c001c
 int layout activity_admin_rejected 0x7f0c001d
 int layout activity_main 0x7f0c001e
+int layout activity_manage_availability 0x7f0c007a
 int layout activity_pending_users 0x7f0c001f
 int layout activity_register_student 0x7f0c0020
 int layout activity_register_tutor 0x7f0c0021
@@ -3840,6 +3854,7 @@ int layout activity_search_tutor 0x7f0c0077
 int layout activity_student_dashboard 0x7f0c0076
 int layout activity_student_sessions 0x7f0c0078
 int layout activity_tutor_dashboard 0x7f0c0023
+int layout activity_view_sessions 0x7f0c007b
 int layout activity_welcome 0x7f0c0024
 int layout custom_dialog 0x7f0c0025
 int layout design_bottom_navigation_item 0x7f0c0026
@@ -3916,6 +3931,7 @@ int layout notification_template_custom_big 0x7f0c006c
 int layout notification_template_icon_group 0x7f0c006d
 int layout notification_template_part_chronometer 0x7f0c006e
 int layout notification_template_part_time 0x7f0c006f
+int layout row_availability_slot 0x7f0c007c
 int layout row_pending_request 0x7f0c0070
 int layout row_rejected_request 0x7f0c0071
 int layout row_session 0x7f0c0079
