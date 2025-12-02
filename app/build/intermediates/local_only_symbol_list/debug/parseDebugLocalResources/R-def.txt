@@ -13,6 +13,7 @@ id autoApproveText
 id backBtn
 id backButton
 id bookBtn
+id btnApprove
 id btnBack
 id btnCreateSlot
 id btnHistory
@@ -21,6 +22,7 @@ id btnManageAvailability
 id btnMySessions
 id btnPastSessions
 id btnPendingRequests
+id btnReject
 id btnSearch
 id btnSelectDate
 id btnSelectEndTime
@@ -70,6 +72,7 @@ id searchBtn
 id searchInput
 id statusText
 id studentInfoText
+id studentName
 id timeText
 id title
 id titleText
@@ -98,6 +101,7 @@ layout row_pending_request
 layout row_rejected_request
 layout row_search_result
 layout row_session
+layout row_tutor_request
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name

@@ -30,4 +30,7 @@ public interface SessionDao {
 
     @Query("SELECT * FROM sessions")
     List<SessionEntity> getAllSessions();
+
+    @Query("SELECT AVG(rating) FROM sessions WHERE tutorId = :tutorId AND rating > 0")
+    Float getAverageRating(int tutorId);
 }

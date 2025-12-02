@@ -1,6 +1,9 @@
 package com.example.otams;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,11 +16,12 @@ public class PendingRequestsActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private AppDatabase db;
     private int tutorId;
+    private Button backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_sessions); // Reusing layout for simplicity
+        setContentView(R.layout.activity_view_sessions); // Reusing this generic layout is fine
 
         db = AppDatabase.getInstance(this);
         tutorId = getIntent().getIntExtra("TUTOR_ID", -1);
@@ -25,9 +29,18 @@ public class PendingRequestsActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        TextView title = findViewById(R.id.pageTitle);
+        title.setText("Pending Requests");
 
-        // TextView title = findViewById(R.id.pageTitle);
-        // title.setText("Pending Requests");
+        backBtn = findViewById(R.id.backBtn);
+        backBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(PendingRequestsActivity.this, TutorDashboardActivity.class);
+            intent.putExtra("TUTOR_ID", tutorId);
+            intent.putExtra("TUTOR_NAME", "Tutor");
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
+        });
 
         loadPendingRequests();
     }
@@ -46,28 +59,22 @@ public class PendingRequestsActivity extends AppCompatActivity {
             Toast.makeText(this, "No pending requests.", Toast.LENGTH_SHORT).show();
         }
 
-        // We need a specific adapter to show Approve/Reject buttons
-        // For simplicity, we can use StudentSessionAdapter logic BUT act differently on click
-        // Or create a 'RequestAdapter'. Let's reuse StudentSessionAdapter and treat 'cancel' as 'reject'.
-        // Ideally, you'd make a custom adapter, but for time, we will use the existing click listener logic.
-
-        StudentSessionAdapter adapter = new StudentSessionAdapter(pendingList, db, new StudentSessionAdapter.OnActionClickListener() {
+        // Use the new PendingRequestsAdapter
+        PendingRequestsAdapter adapter = new PendingRequestsAdapter(pendingList, db, new PendingRequestsAdapter.OnActionListener() {
             @Override
-            public void onCancelClick(SessionEntity session) {
-                // In this context, clicking the main item/button approves it
+            public void onApprove(SessionEntity session) {
                 session.status = "APPROVED";
                 db.sessionDao().update(session);
                 Toast.makeText(PendingRequestsActivity.this, "Session Approved", Toast.LENGTH_SHORT).show();
-                loadPendingRequests();
+                loadPendingRequests(); // Refresh list
             }
 
             @Override
-            public void onRateClick(SessionEntity session) {
-                // Use this as Reject button if needed, or simply add long-press logic
+            public void onReject(SessionEntity session) {
                 session.status = "REJECTED";
                 db.sessionDao().update(session);
                 Toast.makeText(PendingRequestsActivity.this, "Session Rejected", Toast.LENGTH_SHORT).show();
-                loadPendingRequests();
+                loadPendingRequests(); // Refresh list
             }
         });
 

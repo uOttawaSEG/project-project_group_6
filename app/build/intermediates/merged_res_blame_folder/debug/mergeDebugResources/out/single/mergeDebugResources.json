@@ -48,6 +48,10 @@
         "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/layout/activity_admin_rejected.xml"
     },
     {
+        "merged": "com.example.otams.app-debug-43:/layout_activity_main.xml.flat",
+        "source": "com.example.otams.app-main-45:/layout/activity_main.xml"
+    },
+    {
         "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/layout_activity_search_tutor.xml.flat",
         "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/layout/activity_search_tutor.xml"
     },
@@ -56,12 +60,12 @@
         "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/drawable/seg2105_project.png"
     },
     {
-        "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/layout_row_rejected_request.xml.flat",
-        "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/layout/row_rejected_request.xml"
-    },
-    {
         "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/layout_row_rejected_request.xml.flat",
+        "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/layout/row_rejected_request.xml"
     },
     {
         "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/layout_activity_welcome.xml.flat",
@@ -82,10 +86,6 @@
     {
         "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/mipmap-mdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "com.example.otams.app-debug-43:/layout_row_search_result.xml.flat",
-        "source": "com.example.otams.app-main-45:/layout/row_search_result.xml"
     },
     {
         "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/layout_activity_student_sessions.xml.flat",
@@ -112,6 +112,10 @@
         "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/layout/row_session.xml"
     },
     {
+        "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/layout_row_tutor_request.xml.flat",
+        "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/layout/row_tutor_request.xml"
+    },
+    {
         "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/drawable_ic_launcher_background.xml.flat",
         "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/drawable/ic_launcher_background.xml"
     },
@@ -130,6 +134,10 @@
     {
         "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/xml_backup_rules.xml.flat",
         "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/layout_row_search_result.xml.flat",
+        "source": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-main-45:/layout/row_search_result.xml"
     },
     {
         "merged": "/Users/estifanoswm/.gradle/daemon/8.13/com.example.otams.app-debug-43:/layout_row_pending_request.xml.flat",

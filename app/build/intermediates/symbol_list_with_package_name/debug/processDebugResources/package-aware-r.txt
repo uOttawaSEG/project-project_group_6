@@ -3258,6 +3258,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnApprove
 id btnBack
 id btnCreateSlot
 id btnHistory
@@ -3266,6 +3267,7 @@ id btnManageAvailability
 id btnMySessions
 id btnPastSessions
 id btnPendingRequests
+id btnReject
 id btnSearch
 id btnSelectDate
 id btnSelectEndTime
@@ -3646,6 +3648,7 @@ id statusText
 id stop
 id stretch
 id studentInfoText
+id studentName
 id submenuarrow
 id submit_area
 id supportScrollUp
@@ -3941,6 +3944,7 @@ layout row_pending_request
 layout row_rejected_request
 layout row_search_result
 layout row_session
+layout row_tutor_request
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

@@ -1,5 +1,6 @@
 package com.example.otams;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,7 +20,7 @@ public class ViewSessionsActivity extends AppCompatActivity {
     private Button backBtn;
     private AppDatabase db;
     private int tutorId;
-    private String sessionType; // "upcoming" or "past"
+    private String sessionType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,14 @@ public class ViewSessionsActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        backBtn.setOnClickListener(v -> finish());
+        backBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(ViewSessionsActivity.this, TutorDashboardActivity.class);
+            intent.putExtra("TUTOR_ID", tutorId);
+            intent.putExtra("TUTOR_NAME", "Tutor");
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
+        });
 
         setupTitle();
         loadSessions();
@@ -57,7 +65,6 @@ public class ViewSessionsActivity extends AppCompatActivity {
         Date now = new Date();
 
         for (SessionEntity s : allSessions) {
-            // Filter by date
             try {
                 Date sessionDate = sdf.parse(s.date + " " + s.time);
                 if (sessionDate == null) continue;
@@ -69,22 +76,24 @@ public class ViewSessionsActivity extends AppCompatActivity {
                 } else if ("past".equals(sessionType) && isPast) {
                     filteredList.add(s);
                 }
-            } catch (Exception e) { e.printStackTrace(); }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
-        // We reuse StudentSessionAdapter. It handles "Cancel" clicks.
-        StudentSessionAdapter adapter = new StudentSessionAdapter(filteredList, db, new StudentSessionAdapter.OnActionClickListener() {
+        // FIX IS HERE: We pass 'true' to indicate this is a Tutor View
+        StudentSessionAdapter adapter = new StudentSessionAdapter(filteredList, db, true, new StudentSessionAdapter.OnActionClickListener() {
             @Override
             public void onCancelClick(SessionEntity session) {
-                // Tutors can cancel upcoming sessions
-                session.status = "REJECTED"; // Or deleted
+                // Tutor cancels an upcoming session -> Rejected
+                session.status = "REJECTED";
                 db.sessionDao().update(session);
-                loadSessions(); // Refresh
+                loadSessions(); // Refresh list
             }
 
             @Override
             public void onRateClick(SessionEntity session) {
-                // Tutors do not rate students
+                // Tutors do not rate sessions, so we leave this empty
             }
         });
 

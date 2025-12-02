@@ -15,12 +15,10 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdap
     private AppDatabase db;
     private OnBookClickListener listener;
 
-    // Interface for the click event
     public interface OnBookClickListener {
         void onBookClick(AvailabilitySlotEntity slot);
     }
 
-    // CONSTRUCTOR: Ensure it accepts (List, AppDatabase, OnBookClickListener)
     public SearchResultsAdapter(List<AvailabilitySlotEntity> slots, AppDatabase db, OnBookClickListener listener) {
         this.slots = slots;
         this.db = db;
@@ -38,13 +36,19 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdap
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         AvailabilitySlotEntity slot = slots.get(position);
 
-        // We use 'db' here to find the Tutor's name
         TutorEntity tutor = db.tutorDao().getTutorById(slot.tutorId);
         if (tutor != null) {
             holder.tutorName.setText("Tutor: " + tutor.firstName + " " + tutor.lastName);
-            holder.ratingText.setText("Rating: ★ 4.5"); // Placeholder rating
+
+            Float avg = db.sessionDao().getAverageRating(slot.tutorId);
+            if (avg != null && avg > 0) {
+                holder.ratingText.setText(String.format("Rating: %.1f / 5.0", avg));
+            } else {
+                holder.ratingText.setText("Rating: N/A");
+            }
         } else {
             holder.tutorName.setText("Tutor ID: " + slot.tutorId);
+            holder.ratingText.setText("Rating: N/A");
         }
 
         holder.dateTimeText.setText(slot.date + " @ " + slot.startTime);

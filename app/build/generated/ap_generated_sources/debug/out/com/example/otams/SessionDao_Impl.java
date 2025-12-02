@@ -10,6 +10,7 @@ import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
 import java.lang.Class;
+import java.lang.Float;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.SuppressWarnings;
@@ -396,6 +397,34 @@ public final class SessionDao_Impl implements SessionDao {
           _item.feedback = _cursor.getString(_cursorIndexOfFeedback);
         }
         _result.add(_item);
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
+
+  @Override
+  public Float getAverageRating(final int tutorId) {
+    final String _sql = "SELECT AVG(rating) FROM sessions WHERE tutorId = ? AND rating > 0";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    _statement.bindLong(_argIndex, tutorId);
+    __db.assertNotSuspendingTransaction();
+    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+    try {
+      final Float _result;
+      if (_cursor.moveToFirst()) {
+        final Float _tmp;
+        if (_cursor.isNull(0)) {
+          _tmp = null;
+        } else {
+          _tmp = _cursor.getFloat(0);
+        }
+        _result = _tmp;
+      } else {
+        _result = null;
       }
       return _result;
     } finally {

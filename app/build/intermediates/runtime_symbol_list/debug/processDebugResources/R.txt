@@ -3257,6 +3257,7 @@ int id bounce 0x7f090066
 int id bounceBoth 0x7f090067
 int id bounceEnd 0x7f090068
 int id bounceStart 0x7f090069
+int id btnApprove 0x7f090247
 int id btnBack 0x7f090235
 int id btnCreateSlot 0x7f090236
 int id btnHistory 0x7f090229
@@ -3265,6 +3266,7 @@ int id btnManageAvailability 0x7f09006b
 int id btnMySessions 0x7f09022a
 int id btnPastSessions 0x7f09006c
 int id btnPendingRequests 0x7f09006d
+int id btnReject 0x7f090248
 int id btnSearch 0x7f09022b
 int id btnSelectDate 0x7f090237
 int id btnSelectEndTime 0x7f090238
@@ -3645,6 +3647,7 @@ int id statusText 0x7f090232
 int id stop 0x7f0901d7
 int id stretch 0x7f0901d8
 int id studentInfoText 0x7f090233
+int id studentName 0x7f090249
 int id submenuarrow 0x7f0901d9
 int id submit_area 0x7f0901da
 int id supportScrollUp 0x7f0901db
@@ -3940,6 +3943,7 @@ int layout row_pending_request 0x7f0c0070
 int layout row_rejected_request 0x7f0c0071
 int layout row_search_result 0x7f0c007d
 int layout row_session 0x7f0c0079
+int layout row_tutor_request 0x7f0c007e
 int layout select_dialog_item_material 0x7f0c0072
 int layout select_dialog_multichoice_material 0x7f0c0073
 int layout select_dialog_singlechoice_material 0x7f0c0074

@@ -1,6 +1,7 @@
 package com.example.otams;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.widget.Button;
@@ -42,7 +43,13 @@ public class StudentSessionsActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        backBtn.setOnClickListener(v -> finish());
+        backBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(StudentSessionsActivity.this, StudentDashboardActivity.class);
+            intent.putExtra("STUDENT_ID", studentId);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
+        });
 
         loadSessions();
     }
@@ -89,7 +96,7 @@ public class StudentSessionsActivity extends AppCompatActivity {
             }
         });
 
-        StudentSessionAdapter adapter = new StudentSessionAdapter(filteredSessions, db, new StudentSessionAdapter.OnActionClickListener() {
+        StudentSessionAdapter adapter = new StudentSessionAdapter(filteredSessions, db, false, new StudentSessionAdapter.OnActionClickListener() {
             @Override
             public void onCancelClick(SessionEntity session) {
                 handleCancellation(session);

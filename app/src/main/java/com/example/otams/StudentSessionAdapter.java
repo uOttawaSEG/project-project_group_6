@@ -6,22 +6,27 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class StudentSessionAdapter extends RecyclerView.Adapter<StudentSessionAdapter.ViewHolder> {
 
     private List<SessionEntity> sessions;
     private OnActionClickListener listener;
     private AppDatabase db;
+    private boolean isTutorView;
 
     public interface OnActionClickListener {
         void onCancelClick(SessionEntity session);
         void onRateClick(SessionEntity session);
     }
 
-    public StudentSessionAdapter(List<SessionEntity> sessions, AppDatabase db, OnActionClickListener listener) {
+    public StudentSessionAdapter(List<SessionEntity> sessions, AppDatabase db, boolean isTutorView, OnActionClickListener listener) {
         this.sessions = sessions;
         this.db = db;
+        this.isTutorView = isTutorView;
         this.listener = listener;
     }
 
@@ -41,15 +46,35 @@ public class StudentSessionAdapter extends RecyclerView.Adapter<StudentSessionAd
         holder.timeText.setText(session.time);
         holder.statusText.setText("Status: " + session.status);
 
-        TutorEntity tutor = db.tutorDao().getTutorById(session.tutorId);
-        if (tutor != null) {
-            holder.infoText.setText("Tutor: " + tutor.firstName + " " + tutor.lastName);
+        if (isTutorView) {
+            StudentEntity student = db.studentDao().getStudentById(session.studentId);
+            if (student != null) {
+                holder.infoText.setText("Student: " + student.firstName + " " + student.lastName);
+            } else {
+                holder.infoText.setText("Student ID: " + session.studentId);
+            }
         } else {
-            holder.infoText.setText("Tutor ID: " + session.tutorId);
+            TutorEntity tutor = db.tutorDao().getTutorById(session.tutorId);
+            if (tutor != null) {
+                holder.infoText.setText("Tutor: " + tutor.firstName + " " + tutor.lastName);
+            } else {
+                holder.infoText.setText("Tutor ID: " + session.tutorId);
+            }
         }
 
         holder.itemView.setOnClickListener(v -> {
-            if ("HISTORY".equals(session.status) || "COMPLETED".equals(session.status)) {
+            boolean isPast = false;
+            try {
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.CANADA);
+                Date sessionDate = sdf.parse(session.date + " " + session.time);
+                if (sessionDate != null && sessionDate.before(new Date())) {
+                    isPast = true;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            if ((isPast || "COMPLETED".equals(session.status)) && !"REJECTED".equals(session.status)) {
                 listener.onRateClick(session);
             } else {
                 listener.onCancelClick(session);
